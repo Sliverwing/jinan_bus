@@ -1,0 +1,12 @@
+{
+  "name": "jinan_bus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Sliverwing/jinan_bus",
+  "author": "Sliverwing",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta.12"
+  }
+}
