@@ -11,6 +11,10 @@
     "pug": "^2.0.0-beta.12"
   },
   "scripts": {
-    "www": "node app/app.js"
+    "www": "node app/app.js",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^2.4.1"
   }
 }
