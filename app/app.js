@@ -4,9 +4,15 @@ var http = require('./utils/http')
 
 var app = express();
 app.use(serveStatic('public'));
+app.set('view engine', 'pug');
+app.set('views', './templates');
 
 // Config
 const baseUrl = 'http://60.216.101.229/server-ue2/rest';
+
+app.get('/', (req, resp) => {
+    resp.render('index');
+})
 
 // Search Bus line
 app.get('/api/search/:line', (req, resp) => {
