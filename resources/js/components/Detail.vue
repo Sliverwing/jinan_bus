@@ -4,7 +4,7 @@
             a(href="#/" class="page-back router-link-active")
                 i(class="mintui mintui-back")
         #content
-            mt-cell(title="item" v-for="item in busStations")
+            mt-cell(:title="item.stationName" v-for="item in stations" key="id")
 </template>
 <style>
     #topBar {
@@ -21,11 +21,20 @@
         props: ['id'],
         data () {
             return {
-                busStations: []
+                stations: [],
+                lineName: null,
+                startStationName: null,
+                endStationName: null
             }
         },
         created () {
-            console.log(this.id)
+            axios.get('/api/busline/' + this.id)
+                .then( r => {
+                    this.lineName = r.data.result.lineName;
+                    this.startStationName = r.data.result.startStationName;
+                    this.endStationName = r.data.result.endStationName;
+                    this.stations = r.data.result.stations;
+                })
         }
     }
 </script>
