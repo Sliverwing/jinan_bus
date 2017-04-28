@@ -2,6 +2,7 @@
   #searchComponent
     mt-search(v-model="searchKeyWords" :result.sync="searchResult")
       mt-cell(v-for="item in searchResult" :title="item.lineName" :value="item.id" :key="item.id")
+        span {{ item.startStationName }} - {{ item.endStationName }}
 </template>
 <script>
 
@@ -28,6 +29,6 @@ export default {
       }
     }
   }
-  
+
 }
 </script>
