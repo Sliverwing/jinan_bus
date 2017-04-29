@@ -4,6 +4,7 @@ import App from './components/App.vue';
 import mintui from 'mint-ui';
 
 import 'mint-ui/lib/style.min.css';
+import '../style/app.css';
 
 Vue.use(mintui);
 Vue.use(VueRouter);
